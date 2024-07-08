@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaCheck } from "react-icons/fa6";
 import bgImage from "./assets/bg-img.png";
 
 const PlanSection = () => {
@@ -25,6 +25,44 @@ const PlanSection = () => {
     return () => clearTimeout(timer);
   };
 
+  const handleCardClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdO3xN4Pkj77pdcraDphfQC_it5yL8mLUDQqlA1-WP8w3ZCTg/viewform?usp=sf_link",
+      "_blank"
+    );
+  };
+
+  const PlanCard = ({ title, priceBefore, priceAfter, features }) => (
+    <div
+      onClick={handleCardClick}
+      className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-left relative hover:scale-105 transition duration-300 flex flex-col justify-between cursor-pointer"
+    >
+      <div>
+        <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+          {title}
+        </h4>
+        <ul className="text-gray-700 dark:text-gray-300 mb-8">
+          <ul className="text-gray-700 dark:text-gray-300 mb-8">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center">
+                <FaCheck className="text-[#74DF00] mr-2" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </ul>
+      </div>
+      <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
+        <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300">
+          <span className="text-[18px] font-bold line-through">
+            {priceBefore}/-
+          </span>
+          <span className="text-[18px] font-bold">{priceAfter}/-</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section className="relative py-8 w-full mx-auto">
       <div
@@ -42,87 +80,55 @@ const PlanSection = () => {
         }}
       ></div>
       <div className="container mx-auto text-center py-8 md:my-0 relative">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 title">
           Our diet works for everyone
         </h2>
-        <h3 className="text-lg md:text-2xl mb-8 bg-[#BBFF86] text-white py-2 px-4 rounded-md border inline-block shadow-md">
+        <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-white py-2 px-4 rounded-md inline-block shadow-md">
           General Diet Plan
         </h3>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-14 p-12 sm:p-0">
-          {/* Plan Card */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 w-80 h-80 text-left relative hover:scale-105 transition duration-300 flex flex-col justify-between">
-            <div>
-              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                1 WEEK TRIAL
-              </h4>
-              <ul className="text-gray-700 dark:text-gray-300 mb-8">
-                <li>Variety of Salads</li>
-                <li>Preferred Nutritional Count</li>
-                <li>Home Delivery</li>
-                <li>Time Bounded Delivery</li>
-              </ul>
-            </div>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-              <div className="bg-[#FFE39B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 transition duration-300 border border-black">
-                <span className="text-[18px] font-bold line-through">
-                  1800/-
-                </span>
-                <span className="text-[18px] font-bold">1600/-</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Plan Card */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 w-80 h-80 text-left relative hover:scale-105 transition duration-300 flex flex-col justify-between">
-            <div>
-              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                1 MONTH PLAN
-              </h4>
-              <ul className="text-gray-700 dark:text-gray-300 mb-8">
-                <li>Variety of Salads</li>
-                <li>Preferred Nutritional Count</li>
-                <li>Home Delivery</li>
-                <li>Delivery at Your Preferred Time</li>
-                <li>2 Consultations</li>
-              </ul>
-            </div>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-              <div className="bg-[#FFE39B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 transition duration-300 border border-black">
-                <span className="text-[18px] font-bold line-through">
-                  7500/-
-                </span>
-                <span className="text-[18px] font-bold">6000/-</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Plan Card */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 w-80 h-80 text-left relative hover:scale-105 transition duration-300 flex flex-col justify-between">
-            <div>
-              <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                3 MONTH PLAN
-              </h4>
-              <ul className="text-gray-700 dark:text-gray-300 mb-8">
-                <li>Variety of Salads</li>
-                <li>Preferred Nutritional Count</li>
-                <li>Home Delivery</li>
-                <li>Delivery at Your Preferred Time</li>
-                <li>7 Consultations</li>
-                <li>Premium Packaging</li>
-              </ul>
-            </div>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-              <div className="bg-[#FFE39B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 transition duration-300 border border-black">
-                <span className="text-[18px] font-bold line-through">
-                  22500/-
-                </span>
-                <span className="text-[18px] font-bold">18000/-</span>
-              </div>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-y-14 md:gap-x-14 p-16 sm:p-0">
+          <PlanCard
+            title="1 WEEK TRIAL"
+            priceBefore="1800"
+            priceAfter="1600"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Time Bounded Delivery",
+            ]}
+          />
+          <PlanCard
+            title="1 MONTH PLAN"
+            priceBefore="7500"
+            priceAfter="6000"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Delivery at Your Preferred Time",
+              "2 Consultations",
+            ]}
+          />
+          <PlanCard
+            title="3 MONTH PLAN"
+            priceBefore="22500"
+            priceAfter="18000"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Delivery at Your Preferred Time",
+              "7 Consultations",
+              "Premium Packaging",
+            ]}
+          />
         </div>
-        <div className="mt-12 flex justify-center items-center">
-          <button className="bg-[#BBFF86] text-white py-3 px-8 rounded-md text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md">
+        <div className="mt-20 flex justify-center items-center">
+          <button
+            onClick={handleCardClick}
+            className="bg-[#74DF00] hover:bg-[#3fca15] text-white py-3 px-8 rounded-md text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md"
+          >
             I WANT CUSTOMIZED DIET PLAN
             <FaArrowRight className="text-white h-8 w-8" />
           </button>
@@ -149,16 +155,15 @@ const PlanSection = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-green-600">
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#74df00]">
               Special Offer!
             </h2>
             <p className="text-lg mb-6 text-center">
-              Get an extra <span className="font-bold">75% OFF</span> on your
-              first order.
+              Get an extra <span className="font-bold">17% OFF</span>.
             </p>
             <button
               onClick={closeModal}
-              className="bg-green-600 text-white py-2 px-4 rounded-md w-full text-lg font-semibold hover:bg-green-700 transition duration-300"
+              className="bg-[#74DF00] text-white py-2 px-4 rounded-md w-full text-lg font-semibold hover:bg-[#3fca15] transition duration-300"
             >
               Claim Your Offer
             </button>

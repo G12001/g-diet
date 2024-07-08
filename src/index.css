@@ -6,6 +6,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.7;
+}
+
+.title {
+    font-family: "Irish Grover", system-ui;
+}
+
+.description {
+  font-family: "Quicksand", sans-serif;
 }

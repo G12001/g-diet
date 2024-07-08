@@ -1,8 +1,43 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaCheck } from "react-icons/fa6";
 import bgImage from "./assets/bg-img.png";
 
 const PlanSection = () => {
+  const handleCustomDietPlanClick = () => {
+    window.location.href = "https://www.customdietplan.com";
+  };
+
+  const handleCardClick = (url) => {
+    window.open(url, "_blank");
+  };
+
+  const PlanCard = ({ title, priceBefore, priceAfter, url, features }) => (
+    <div
+      className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 max-w-sm w-full text-left relative hover:scale-105 transition duration-300 cursor-pointer"
+      onClick={() => handleCardClick(url)}
+    >
+      <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+        {title}
+      </h4>
+      <ul className="text-gray-700 dark:text-gray-300 mb-8">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center">
+            <FaCheck className="text-green-500 mr-2" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 ">
+        <div className="bg-[#C7FF9B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 hover:bg-green-600 transition duration-300 border">
+          <span className="text-[18px] font-bold line-through">
+            {priceBefore}/-
+          </span>
+          <span className="text-[18px] font-bold">{priceAfter}/-</span>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section className="relative py-8 w-full mx-auto">
       <div
@@ -20,77 +55,52 @@ const PlanSection = () => {
           General Diet Plan
         </h3>
         <div className="flex flex-col md:flex-row justify-center items-center gap-14 p-12 sm:p-0">
-          {/* Plan Card */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 max-w-sm w-full text-left relative hover:scale-105 transition duration-300">
-            <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              1 WEEK TRIAL
-            </h4>
-            <ul className="text-gray-700 dark:text-gray-300 mb-8">
-              <li>Variety of Salads</li>
-              <li>Preferred Nutritional Count</li>
-              <li>Home Delivery</li>
-              <li>Time Bounded Delivery</li>
-            </ul>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 ">
-              <div className="bg-[#C7FF9B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 hover:bg-green-600 transition duration-300 border">
-                <span className="text-[18px] font-bold line-through">
-                  1800/-
-                </span>
-                <span className="text-[18px] font-bold">1600/-</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Plan Card */}
-
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 max-w-sm w-full text-left relative hover:scale-105 transition duration-300">
-            <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              1 MONTH PLAN
-            </h4>
-            <ul className="text-gray-700 dark:text-gray-300 mb-8">
-              <li>Variety of Salads</li>
-              <li>Preferred Nutritional Count</li>
-              <li>Home Delivery</li>
-              <li>Delivery at Your Preferred Time</li>
-              <li>2 Consultations</li>
-            </ul>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-              <div className="bg-[#C7FF9B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 hover:bg-green-600 transition duration-300 border">
-                <span className="text-[18px] font-bold line-through">
-                  7500/-
-                </span>
-                <span className="text-[18px] font-bold">6000/-</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Plan Card */}
-
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 max-w-sm w-full text-left relative hover:scale-105 transition duration-300">
-            <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              3 MONTH PLAN
-            </h4>
-            <ul className="text-gray-700 dark:text-gray-300 mb-8">
-              <li>Variety of Salads</li>
-              <li>Preferred Nutritional Count</li>
-              <li>Home Delivery</li>
-              <li>Delivery at Your Preferred Time</li>
-              <li>7 Consultations</li>
-              <li>Premium Packaging</li>
-            </ul>
-            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-              <div className="bg-[#C7FF9B] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-2 hover:bg-green-600 transition duration-300 border">
-                <span className="text-[18px] font-bold line-through">
-                  22500/-
-                </span>
-                <span className="text-[18px] font-bold">18000/-</span>
-              </div>
-            </div>
-          </div>
+          <PlanCard
+            title="1 WEEK TRIAL"
+            priceBefore="1800"
+            priceAfter="1600"
+            url="https://www.example.com/trial-plan"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Time Bounded Delivery",
+            ]}
+          />
+          <PlanCard
+            title="1 MONTH PLAN"
+            priceBefore="7500"
+            priceAfter="6000"
+            url="https://www.example.com/month-plan"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Delivery at Your Preferred Time",
+              "2 Consultations",
+            ]}
+          />
+          <PlanCard
+            title="3 MONTH PLAN"
+            priceBefore="22500"
+            priceAfter="18000"
+            url="https://www.example.com/three-month-plan"
+            features={[
+              "Variety of Salads",
+              "Preferred Nutritional Count",
+              "Home Delivery",
+              "Delivery at Your Preferred Time",
+              "7 Consultations",
+              "Premium Packaging",
+            ]}
+          />
         </div>
         <div className="mt-12 flex justify-center items-center">
-          <button className="bg-[#BBFF86] text-white py-3 px-8 rounded-md text-lg font-semibold hover:bg-green-600 transition duration-300 flex justify-center items-center gap-x-2 ">
-            <spm>I WANT CUSTOMIZED DIET PLAN</spm>
+          <button
+            className="bg-[#BBFF86] text-white py-3 px-8 rounded-md text-lg font-semibold hover:bg-green-600 transition duration-300 flex justify-center items-center gap-x-2"
+            onClick={handleCustomDietPlanClick}
+          >
+            <span>I WANT CUSTOMIZED DIET PLAN</span>
             <FaArrowRight className="text-white h-8 w-8" />
           </button>
         </div>
