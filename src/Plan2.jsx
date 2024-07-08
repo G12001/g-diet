@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { TiArrowRightOutline } from "react-icons/ti";
-import bgImage from "./assets/bg-img.png";
+import bgImage from "./assets/bg-img2.png";
 
 const PlanSection = () => {
   const [showModal, setShowModal] = useState(false);
@@ -54,7 +54,7 @@ const PlanSection = () => {
         </ul>
       </div>
       <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-        <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300">
+        <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300  border border-gray-900">
           <span className="text-[18px] font-bold line-through">
             {priceBefore}/-
           </span>
