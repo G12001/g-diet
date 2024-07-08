@@ -81,7 +81,7 @@ const PlanSection = () => {
         }}
       ></div>
       <div className="container mx-auto text-center py-8 md:my-0 relative">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 title">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase">
           Our diet works for everyone
         </h2>
         <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-white py-2 px-4 rounded-md inline-block shadow-md">
