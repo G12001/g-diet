@@ -84,10 +84,10 @@ const PlanSection = () => {
         <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase">
           Our diet works for everyone
         </h2>
-        <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-white py-2 px-4 rounded-md inline-block shadow-md">
+        <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-black py-2 px-4 rounded-md inline-block shadow-md">
           General Diet Plan
         </h3>
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-y-14 md:gap-x-14 p-16 sm:p-0">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-y-16 md:gap-x-16 p-16 sm:p-0">
           <PlanCard
             title="1 WEEK TRIAL"
             priceBefore="1800"
