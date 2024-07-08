@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowRight, FaCheck } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
+import { TiArrowRightOutline } from "react-icons/ti";
 import bgImage from "./assets/bg-img.png";
 
 const PlanSection = () => {
@@ -130,7 +131,7 @@ const PlanSection = () => {
             className="bg-[#74DF00] hover:bg-[#3fca15] text-white py-3 px-8 rounded-md text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md"
           >
             I WANT CUSTOMIZED DIET PLAN
-            <FaArrowRight className="text-white h-8 w-8" />
+            <TiArrowRightOutline className="text-white h-8 w-8" />
           </button>
         </div>
         <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm">
