@@ -1,4 +1,4 @@
-import PlanSection from "./Plan2";
+import PlanSection from "./Plan3";
 
 const App = () => {
   return (
