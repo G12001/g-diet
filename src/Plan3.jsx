@@ -190,7 +190,7 @@ const PlanSection = () => {
         </div>
         <ul className="text-gray-700 dark:text-gray-900 mb-8 shadow-lg bg-white p-8 rounded-lg m-2 h-72 w-4/5">
           {plans[selectedPlan].features.map((feature, index) => (
-            <li key={index} className="flex items-center">
+            <li key={index} className="flex items-center mb-1">
               <FaCheck className="text-[#74DF00] mr-2" />
               {feature}
             </li>
