@@ -188,7 +188,7 @@ const PlanSection = () => {
             </div>
           ))}
         </div>
-        <ul className="text-gray-700 dark:text-gray-300 mb-8 shadow-lg bg-white p-8 rounded-lg m-2 h-72">
+        <ul className="text-gray-700 dark:text-gray-900 mb-8 shadow-lg bg-white p-8 rounded-lg m-2 h-72 w-4/5">
           {plans[selectedPlan].features.map((feature, index) => (
             <li key={index} className="flex items-center">
               <FaCheck className="text-[#74DF00] mr-2" />
