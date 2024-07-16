@@ -123,7 +123,7 @@ const PlanSection = () => {
         }}
       ></div>
       {/* For larger screens */}
-      <div className="text-center py-8 md:my-0 relative hidden sm:block">
+      <div className="text-center py-8 md:my-0 relative ">
         {/* Brand logo and tagline */}
         <div className="flex flex-col items-center mb-8">
           <img src={logoImage} alt="Brand Logo" className="w-32 md:w-48 mb-4" />
@@ -138,7 +138,7 @@ const PlanSection = () => {
         <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-black py-2 px-4 rounded-md inline-block shadow-md">
           General Diet Plan
         </h3>
-        <div className="container mx-auto  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-16 md:gap-x-16 p-16">
+        <div className="  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1   p-16  gap-12 w-full">
           {plans.map((plan) => (
             <PlanCard
               key={plan.id}
@@ -164,7 +164,7 @@ const PlanSection = () => {
       </div>
 
       {/* For mobile screen */}
-      <div className="sm:hidden h-screen w-full flex flex-col justify-center items-center gap-y-2">
+      <div className="xs:hidden h-screen w-full flex flex-col justify-center items-center gap-y-2">
         <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase text-center">
           Our diet works for everyone
         </h2>
