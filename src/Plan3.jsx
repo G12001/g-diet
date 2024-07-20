@@ -184,7 +184,7 @@ const PlanSection = () => {
         <h2 className="text-3xl md:text-5xl font-bold title uppercase text-center">
           Our diet works for everyone
         </h2>
-        <div className="cursor-pointer bg-[#FFE20D] text-white py-3 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex flex-col justify-center items-center gap-y-2 shadow-md">
+        <div className="cursor-pointer bg-[#FFE20D] text-white py-2 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex flex-col justify-center items-center shadow-md">
           <button className="flex justify-center items-center gap-x-2">
             I WANT CUSTOMIZED DIET PLAN
             <TiArrowRightOutline className="text-white h-6 w-6" />
@@ -225,7 +225,7 @@ const PlanSection = () => {
         </ul>
         <button
           onClick={handleCardClick}
-          className="font-family bg-[#D0E40B] text-white py-2 px-8 rounded-md text-base md:text-lg font-semibold transition duration-300 hover:scale-110 flex justify-center items-center gap-x-2 shadow-md absolute bottom-8"
+          className="font-family bg-[#D0E40B] text-white py-2 px-8 rounded-md text-base md:text-lg font-semibold transition duration-300 hover:scale-110 flex justify-center items-center gap-x-2 shadow-md absolute bottom-12"
         >
           Subscribe
         </button>
