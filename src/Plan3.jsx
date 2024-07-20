@@ -4,6 +4,16 @@ import { TiArrowRightOutline } from "react-icons/ti";
 import bgImage from "./assets/bg-img2.png";
 import logoImage from "./assets/brand-logo2.png"; // Add your logo image here
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper/modules";
+
 const plans = [
   {
     id: 0,
@@ -107,7 +117,7 @@ const PlanSection = () => {
   );
 
   return (
-    <section className="relative md:py-8 w-full mx-auto h-screen md:h-auto">
+    <section className="relative md:py-8 w-full mx-auto h-screen sm:h-auto">
       <div
         className="fixed inset-0 bg-center bg-cover"
         style={{
@@ -124,17 +134,23 @@ const PlanSection = () => {
       ></div>
       {/* For larger screens */}
       <div className="text-center py-8 md:my-0 relative hidden sm:block">
-        {/* Brand logo and tagline */}
         <div className="flex flex-col items-center mb-8">
-          <img src={logoImage} alt="Brand Logo" className="w-32 md:w-48 mb-4" />
-          <h1 className="text-xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100">
-            The missing piece to your fitness puzzle
-          </h1>
+          <div className="flex items-center">
+            <div className="flex flex-col justify-center items-center w-[18%]">
+              <img
+                src={logoImage}
+                alt="Brand Logo"
+                className="w-24 md:w-28 mb-1"
+              />
+              <h1 className="flex-grow text-[12px] font-semibold text-gray-900 dark:text-gray-100">
+                The missing piece to your fitness puzzle
+              </h1>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase mt-4">
+              Our diet works for everyone
+            </h2>
+          </div>
         </div>
-
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase mt-4">
-          Our diet works for everyone
-        </h2>
         <h3 className="text-lg md:text-2xl mb-8 bg-[#74DF00] text-black py-2 px-4 rounded-md inline-block shadow-md">
           General Diet Plan
         </h3>
@@ -165,21 +181,33 @@ const PlanSection = () => {
 
       {/* For mobile screen */}
       <div className="sm:hidden h-screen w-full flex flex-col justify-center items-center gap-y-2">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 title uppercase text-center">
+        <h2 className="text-3xl md:text-5xl font-bold title uppercase text-center">
           Our diet works for everyone
         </h2>
+        <div className="w-full flex flex-col items-center my-2">
+          <button
+            onClick={handleCardClick}
+            className="bg-[#74DF00] hover:bg-[#3fca15] text-white py-3 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md"
+          >
+            I WANT CUSTOMIZED DIET PLAN
+            <TiArrowRightOutline className="text-white h-6 w-6" />
+          </button>
+          <p className="text-[12px] text-gray-600">
+            (weight loss, weight gain, keto, athletic)
+          </p>
+        </div>
         <div className="flex gap-x-2">
           {plans.map((plan) => (
             <div
               onClick={() => setSelectedPlan(plan.id)}
-              className={`shadow-lg cursor-pointer rounded-3xl h-32 w-32 flex flex-col justify-center items-center ${
+              className={` border border-gray-900 shadow-lg cursor-pointer rounded-3xl h-32 w-32 flex flex-col justify-center items-center ${
                 plan.id !== selectedPlan ? "bg-white" : "bg-[#74DF00]"
               } ${selectedPlan === plan.id ? "text-white" : "text-black"}`}
             >
-              <h2 className="font-bold text-xl text-center mb-1">
+              <h2 className="font-bold text-lg text-center mb-1">
                 {plan.title}
               </h2>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-red-600">
                 <span className="line-through font-semibold">
                   {plan.priceBefore}/-
                 </span>
@@ -188,7 +216,7 @@ const PlanSection = () => {
             </div>
           ))}
         </div>
-        <ul className="text-gray-700 dark:text-gray-900 mb-8 shadow-lg bg-white p-8 rounded-lg m-2 h-72 w-4/5">
+        <ul className="text-gray-700 dark:text-gray-900 mb-6 shadow-lg bg-white p-6 rounded-lg m-2 h-56 w-[90%]">
           {plans[selectedPlan].features.map((feature, index) => (
             <li key={index} className="flex items-center mb-1">
               <FaCheck className="text-[#74DF00] mr-2" />
