@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { TiArrowRightOutline } from "react-icons/ti";
+import { FaArrowRightLong } from "react-icons/fa6";
+
 import bgImage from "./assets/bg-img2.png";
 import logoImage from "./assets/brand-logo2.png"; // Add your logo image here
 
@@ -99,7 +101,7 @@ const PlanSection = () => {
         <ul className="text-gray-700 dark:text-gray-300 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <FaCheck className="text-[#D0E40B] mr-2" />
+              <FaCheck className="text-[#ACE60A] mr-2" />
               {feature}
             </li>
           ))}
@@ -151,7 +153,7 @@ const PlanSection = () => {
             </h2>
           </div>
         </div>
-        <h3 className="text-lg md:text-2xl mb-8 bg-[#D0E40B] text-black py-2 px-4 rounded-md inline-block shadow-md">
+        <h3 className="text-lg md:text-2xl mb-8 bg-[#ACE60A] text-black py-2 px-4 rounded-md inline-block shadow-md">
           General Diet Plan
         </h3>
         <div className="container mx-auto  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-16 md:gap-x-16 p-16">
@@ -168,10 +170,10 @@ const PlanSection = () => {
         <div className="mt-20 flex justify-center items-center">
           <button
             onClick={handleCardClick}
-            className="bg-[#D0E40B] hover:bg-[#3fca15] text-white py-3 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md"
+            className="bg-[#ACE60A] hover:bg-[#3fca15] text-white py-3 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex justify-center items-center gap-x-2 shadow-md"
           >
             I WANT CUSTOMIZED DIET PLAN
-            <TiArrowRightOutline className="text-white h-8 w-8" />
+            <FaArrowRightLong className="text-white h-8 w-8" />
           </button>
         </div>
         <p className="mt-4 text-gray-900 dark:text-gray-300 text-sm">
@@ -184,23 +186,25 @@ const PlanSection = () => {
         <h2 className="text-3xl md:text-5xl font-bold title uppercase text-center">
           Our diet works for everyone
         </h2>
-        <div className="cursor-pointer bg-[#FFE20D] text-white py-2 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex flex-col justify-center items-center shadow-md">
-          <button className="flex justify-center items-center gap-x-2">
-            I WANT CUSTOMIZED DIET PLAN
-            <TiArrowRightOutline className="text-white h-6 w-6" />
-          </button>
-          <div>
-            <p className="text-[12px] text-gray-600 text-center">
-              (Weight loss, Weight gain, Keto, Athletic)
-            </p>
+        <div className="cursor-pointer bg-[#ACE60A] text-white py-2 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex justify-center gap-x-2 items-center shadow-md border border-red-600">
+          <div className="">
+            <button className="flex justify-center items-center gap-x-2">
+              I WANT CUSTOMIZED DIET PLAN
+            </button>
+            <div>
+              <p className="text-[12px] text-gray-600 text-center">
+                (Weight loss, Weight gain, Keto, Athletic)
+              </p>
+            </div>
           </div>
+          <FaArrowRightLong className="text-white h-6 w-6" />
         </div>
         <div className="flex gap-x-2">
           {plans.map((plan) => (
             <div
               onClick={() => setSelectedPlan(plan.id)}
               className={` border border-gray-900 shadow-lg cursor-pointer rounded-3xl h-32 w-32 flex flex-col justify-center items-center ${
-                plan.id !== selectedPlan ? "bg-white" : "bg-[#D0E40B]"
+                plan.id !== selectedPlan ? "bg-white" : "bg-[#ACE60A]"
               } ${selectedPlan === plan.id ? "text-white" : "text-black"}`}
             >
               <h2 className="font-bold text-lg text-center mb-1">
@@ -218,14 +222,14 @@ const PlanSection = () => {
         <ul className="text-gray-700 dark:text-gray-900 mb-6 shadow-lg bg-white p-6 rounded-lg m-2 h-56 w-[90%]">
           {plans[selectedPlan].features.map((feature, index) => (
             <li key={index} className="flex items-center mb-1">
-              <FaCheck className="text-[#D0E40B] mr-2" />
+              <FaCheck className="text-[#ACE60A] mr-2" />
               {feature}
             </li>
           ))}
         </ul>
         <button
           onClick={handleCardClick}
-          className="font-family bg-[#D0E40B] text-white py-2 px-8 rounded-md text-base md:text-lg font-semibold transition duration-300 hover:scale-110 flex justify-center items-center gap-x-2 shadow-md absolute bottom-12"
+          className="font-family border border-red-600 bg-[#ACE60A] text-white py-2 px-8 rounded-md text-lg md:text-lg font-semibold transition duration-300 hover:scale-110 flex justify-center items-center gap-x-2 shadow-md absolute bottom-12"
         >
           Subscribe
         </button>
@@ -248,7 +252,7 @@ const PlanSection = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#D0E40B]">
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#ACE60A]">
               Special Offer!
             </h2>
             <p className="text-lg mb-6 text-center">
@@ -256,7 +260,7 @@ const PlanSection = () => {
             </p>
             <button
               onClick={closeModal}
-              className="bg-[#D0E40B] text-white py-2 px-4 rounded-md w-full text-lg font-semibold hover:bg-[#3fca15] transition duration-300"
+              className="bg-[#ACE60A] text-white py-2 px-4 rounded-md w-full text-lg font-semibold hover:bg-[#3fca15] transition duration-300"
             >
               Claim Your Offer
             </button>
