@@ -17,7 +17,12 @@ const RazorpayButton = () => {
     }
   }, []);
 
-  return <form ref={formRef}></form>;
+  return (
+    <form
+      ref={formRef}
+      className="hover:scale-105 transition duration-300"
+    ></form>
+  );
 };
 
 export default RazorpayButton;

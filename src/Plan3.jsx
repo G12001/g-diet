@@ -92,8 +92,8 @@ const PlanSection = () => {
 
   const PlanCard = ({ title, priceBefore, priceAfter, features }) => (
     <div
-      onClick={handleCardClick}
-      className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-left relative hover:scale-105 transition duration-300 flex flex-col justify-between cursor-pointer"
+      // onClick={handleCardClick}
+      className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-left relative flex flex-col justify-between cursor-pointer"
     >
       <div>
         <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
