@@ -182,8 +182,8 @@ const PlanSection = () => {
       </div>
 
       {/* For mobile screen */}
-      <div className="sm:hidden h-screen w-full flex flex-col justify-center items-center gap-y-4">
-        <h2 className="text-3xl md:text-5xl font-bold title uppercase text-center">
+      <div className="sm:hidden h-screen w-full flex flex-col justify-start items-center gap-y-4">
+        <h2 className="text-3xl md:text-5xl font-bold title uppercase text-center my-12">
           Our diet works for everyone
         </h2>
         <div className="cursor-pointer bg-[#ACE60A] text-white py-2 px-8 rounded-md text-sm md:text-lg font-semibold transition duration-300 flex justify-center gap-x-2 items-center shadow-md border border-red-600">
