@@ -23,6 +23,7 @@ const plans = [
     title: "1 WEEK TRIAL",
     priceBefore: "1800",
     priceAfter: "1600",
+    RazorpayButton: RazorpayButton,
     features: [
       "Variety of Salads",
       "Preferred Nutritional Count",
@@ -35,6 +36,7 @@ const plans = [
     title: "1 MONTH PLAN",
     priceBefore: "7500",
     priceAfter: "6000",
+    RazorpayButton: RazorpayButton,
     features: [
       "Variety of Salads",
       "Preferred Nutritional Count",
@@ -48,6 +50,7 @@ const plans = [
     title: "3 MONTH PLAN",
     priceBefore: "22500",
     priceAfter: "18000",
+    RazorpayButton: RazorpayButton,
     features: [
       "Variety of Salads",
       "Preferred Nutritional Count",
@@ -90,33 +93,41 @@ const PlanSection = () => {
     );
   };
 
-  const PlanCard = ({ title, priceBefore, priceAfter, features }) => (
-    <div
-      // onClick={handleCardClick}
-      className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-left relative flex flex-col justify-between cursor-pointer"
-    >
-      <div>
-        <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-          {title}
-        </h4>
-        <ul className="text-gray-700 dark:text-gray-300 mb-8">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center">
-              <FaCheck className="text-[#ACE60A] mr-2" />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <RazorpayButton />
-      <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
-        <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300  border border-gray-900">
-          <span className="text-[18px] font-bold line-through">
-            {priceBefore}/-
-          </span>
-          <span className="text-[18px] font-bold">{priceAfter}/-</span>
+  const PlanCard = ({
+    title,
+    priceBefore,
+    priceAfter,
+    features,
+    RazorpayButton,
+  }) => (
+    <div className="flex flex-col justify-center items-center gap-y-8">
+      <div
+        // onClick={handleCardClick}
+        className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-left relative flex flex-col justify-between cursor-pointer"
+      >
+        <div>
+          <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+            {title}
+          </h4>
+          <ul className="text-gray-700 dark:text-gray-300 mb-8">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center">
+                <FaCheck className="text-[#ACE60A] mr-2" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
+          <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300  border border-gray-900">
+            <span className="text-[18px] font-bold line-through">
+              {priceBefore}/-
+            </span>
+            <span className="text-[18px] font-bold">{priceAfter}/-</span>
+          </div>
         </div>
       </div>
+      <RazorpayButton />
     </div>
   );
 
@@ -166,6 +177,7 @@ const PlanSection = () => {
               priceBefore={plan.priceBefore}
               priceAfter={plan.priceAfter}
               features={plan.features}
+              RazorpayButton={plan.RazorpayButton}
             />
           ))}
         </div>
