@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import RazorpayButton from "./RazorpayButton";
 
 const plans = [
   {
@@ -107,6 +108,7 @@ const PlanSection = () => {
           ))}
         </ul>
       </div>
+      <RazorpayButton />
       <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">
         <div className="bg-[#FF8C00] text-white rounded-full h-24 w-24 flex items-center justify-center flex-col p-4 transition duration-300  border border-gray-900">
           <span className="text-[18px] font-bold line-through">
@@ -227,6 +229,7 @@ const PlanSection = () => {
             </li>
           ))}
         </ul>
+
         <button
           onClick={handleCardClick}
           className="font-family border border-red-600 bg-[#ACE60A] text-white py-2 px-8 rounded-md text-lg md:text-lg font-semibold transition duration-300 hover:scale-110 flex justify-center items-center gap-x-2 shadow-md absolute bottom-12"
