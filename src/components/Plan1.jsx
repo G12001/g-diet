@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
-import bgImage from "../assets/bg-img2.png";
+import bgImage from "../assets/bg-img3.png";
 import brandLogo from "../assets/brand-logo2.png";
-import RazorpayButton1 from "./Razorpay payment buttons/RazorpayButton1";
-import RazorpayButton2 from "./Razorpay payment buttons/RazorpayButton2";
-import RazorpayButton3 from "./Razorpay payment buttons/RazorpayButton3";
 
 function Plan1({ plans }) {
-  const [billingCycle, setBillingCycle] = useState("monthly");
-
   return (
     <div className="min-h-screen my-24">
       <div
@@ -21,37 +16,24 @@ function Plan1({ plans }) {
       <div
         className="fixed inset-0 bg-white"
         style={{
-          opacity: 0.8,
+          opacity: 0.4,
           zIndex: -1,
         }}
       ></div>
       <div className="container mx-auto flex justify-between items-start gap-y-3 mb-4">
-        <div className="w-[80%] flex flex-col items-start justify-center gap-y-5">
-          <p className="text-gray-600 text-base">
-            Choose your subscription now
-          </p>
-          <h1 className="md:text-[52px] text-[44px] font-bold leading-tight">
+        <div className="w-[80%] flex flex-col items-start justify-center">
+          <h1 className="md:text-[52px] sm:text-[44px] text-[36px] font-bold leading-tight">
             Our diet works for everyone
           </h1>
-          <div className="flex space-x-4">
-            <button
-              className={`px-4 py-2 font-semibold ${
-                billingCycle === "monthly"
-                  ? "bg-black text-white"
-                  : "bg-white text-black border"
-              }`}
-              onClick={() => setBillingCycle("monthly")}
-            >
+          <p className="text-gray-600 text-lg mt-1 mb-3">
+            Choose your subscription now
+          </p>
+
+          <div className="flex space-x-4 mt-4 hidden sm:block">
+            <button className="px-4 py-2 font-semibold bg-black text-white shadow-md">
               General Diet Plan
             </button>
-            <button
-              className={`px-4 py-2 font-semibold ${
-                billingCycle === "annual"
-                  ? "bg-black text-white"
-                  : "bg-white text-black border"
-              }`}
-              onClick={() => setBillingCycle("annual")}
-            >
+            <button className="px-4 py-2 font-semibold bg-white text-black shadow-md">
               I want customize diet plan
               <p className="text-[12px] text-gray-600 text-center">
                 (Weight loss, Weight gain, Keto, Athletic)
@@ -59,9 +41,20 @@ function Plan1({ plans }) {
             </button>
           </div>
         </div>
-        <div className="h-48 w-[20%] flex justify-end items-center">
-          <img src={brandLogo} alt="brand-logo" className="h-auto w-auto" />
+        <div className="w-[20%] flex justify-end items-center">
+          <img src={brandLogo} alt="brand-logo" className="md:h-40 w-auto" />
         </div>
+      </div>
+      <div className="flex flex-row space-x-4 mt-4 sm:hidden">
+        <button className="px-4 py-2 font-semibold bg-black text-white">
+          General Diet Plan
+        </button>
+        <button className="px-4 py-2 font-semibold bg-white text-black">
+          I want customize diet plan
+          <p className="text-[12px] text-gray-600 text-center">
+            (Weight loss, Weight gain, Keto, Athletic)
+          </p>
+        </button>
       </div>
       <main className="container mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4">
