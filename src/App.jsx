@@ -37,7 +37,7 @@ const plans = [
     id: 2,
     title: "3 MONTH PLAN",
     priceBefore: "₹ 22500",
-    priceAfter: "₹ 18000",
+    priceAfter: "₹ 14999",
     RazorpayButton: RazorpayButton3,
     features: [
       "Variety of Salads",
@@ -51,7 +51,11 @@ const plans = [
 ];
 
 const App = () => {
-  return <Plan1 plans={plans} />;
+  return (
+    <div className="relative">
+      <Plan1 plans={plans} />
+    </div>
+  );
 };
 
 export default App;
